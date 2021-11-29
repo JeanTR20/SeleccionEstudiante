@@ -111,3 +111,26 @@ def Anadir_registros():
 
    session.commit ( )
    session.close ( )
+
+if __name__ == '__main__':
+   Anadir_registros ( )
+   anadir_estudiante ( "Keysi" , 7 , "Simbron Guerra" , Escala.Escala1 )
+   anadir_estudiante ( "Jean" , 7 , "Torres Ricse" , Escala.Escala2 )
+   anadir_estudiante ( "Liz" , 7 , "Tarazona Miraval" , Escala.Escala3 )
+   anadir_estudiante ( "Miguelito" , 2 , "Poma Amop" , Escala.Escala2 )
+
+   editar_estudiante(2, "Jhon", 7, "Camposano Iriarte", Escala.Escala1)
+   editar_estudiante(1, "Pilar", 7, "Cangalaya Antezana", Escala.Escala2)
+   editar_estudiante(4, "Smith", 7, "Torres Ricse", Escala.Escala2)
+
+   seleccionar_estudiante(2, "Jhon", 7, "Camposano Iriarte", Escala.Escala1)
+   seleccionar_estudiante(1, "pilar", 7, "Cangalaya Antezana", Escala.Escala2)
+
+
+   for i in [ 1 , 2 , 3, 4, 5] :
+      mostrar_estudiante ( i )
+
+   i = 1
+   while i <= 4:
+      mostrar_estudiante(i)
+      i=i+1

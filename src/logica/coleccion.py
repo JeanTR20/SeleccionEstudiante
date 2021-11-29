@@ -31,3 +31,13 @@ class Coleccion():
 
     def dar_estudiante_por_id(self, estudiante_id):
         return session.query(Estudiante).get(estudiante_id).__dict__
+
+    def seleccionar_estudiante(self, estudiante_id, nombre, ciclo, apellido, escala):
+        busqueda = session.query(Estudiante).filter(Estudiante.nombre == nombre, Estudiante.id != estudiante_id).all()
+        if len(busqueda) == 0:
+            estudiante = session.query(Estudiante).filter(Estudiante.id == estudiante_id).first()
+            estudiante.nombre = nombre
+            session.commit()
+            return True
+        else:
+            return False
